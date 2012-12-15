@@ -2,7 +2,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>net.kahowell</groupId>
   <artifactId>xmlfuzzer</artifactId>
-  <version>0.0.1-SNAPSHOT</version>
+  <version>0.0.1</version>
   <name>XmlFuzzer</name>
   <description>Library &amp; console application for fuzzing/generation of XML data. Built on top of Apache XMLBeans.</description>
   <inceptionYear>2012</inceptionYear>
