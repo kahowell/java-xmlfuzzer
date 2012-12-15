@@ -44,4 +44,9 @@
   		<type>jar</type>
   	</dependency>
   </dependencies>
+  <scm>
+  	<url>http://github.com/kahowell/java-xmlfuzzer</url>
+  	<connection>scm:git:https://github.com/kahowell/java-xmlfuzzer.git</connection>
+  	<developerConnection>scm:git:git@github.com:kahowell/java-xmlfuzzer.git</developerConnection>
+  </scm>
 </project>
