@@ -7,6 +7,11 @@
   <description>Library &amp; console application for fuzzing/generation of XML data. Built on top of Apache XMLBeans.</description>
   <inceptionYear>2012</inceptionYear>
   <url>http://github.com/kahowell/java-xmlfuzzer</url>
+  <scm>
+  	<url>http://github.com/kahowell/java-xmlfuzzer</url>
+  	<connection>scm:git:https://github.com/kahowell/java-xmlfuzzer.git</connection>
+  	<developerConnection>scm:git:git@github.com:kahowell/java-xmlfuzzer.git</developerConnection>
+  </scm>
   <developers>
   	<developer>
   		<id>kahowell</id>
@@ -44,9 +49,17 @@
   		<type>jar</type>
   	</dependency>
   </dependencies>
-  <scm>
-  	<url>http://github.com/kahowell/java-xmlfuzzer</url>
-  	<connection>scm:git:https://github.com/kahowell/java-xmlfuzzer.git</connection>
-  	<developerConnection>scm:git:git@github.com:kahowell/java-xmlfuzzer.git</developerConnection>
-  </scm>
+  <build>
+  	<plugins>
+  		<plugin>
+  			<groupId>org.apache.maven.plugins</groupId>
+  			<artifactId>maven-compiler-plugin</artifactId>
+  			<version>3.0</version>
+  			<configuration>
+  				<source>1.6</source>
+  				<target>1.6</target>
+  			</configuration>
+  		</plugin>
+  	</plugins>
+  </build>
 </project>
