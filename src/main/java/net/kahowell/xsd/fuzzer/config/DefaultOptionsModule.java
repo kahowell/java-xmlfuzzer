@@ -53,6 +53,7 @@ public class DefaultOptionsModule extends AbstractModule {
 		bindConstant().annotatedWith(Names.named("generate required attributes only")).to(false);
 		bindConstant().annotatedWith(Names.named("output filename")).to("output.xml");
 		bindConstant().annotatedWith(Names.named("hard element limit")).to(20);
+		bindConstant().annotatedWith(Names.named("offline")).to(false);
 		bind(XmlOptions.class).annotatedWith(Names.named("xml schema options")).toProvider(DefaultSchemaXmlOptionsProvider.class).in(Singleton.class);
 		bind(XmlOptions.class).annotatedWith(Names.named("xml save options")).toProvider(DefaultSaveXmlOptionsProvider.class).in(Singleton.class);
 		bind(RandomData.class).to(RandomDataImpl.class).in(Singleton.class);

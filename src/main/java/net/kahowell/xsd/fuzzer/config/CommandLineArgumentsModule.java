@@ -34,8 +34,7 @@ public class CommandLineArgumentsModule extends AbstractModule {
 	protected void configure() {
 		if (commandLine.hasOption("nd")) {
 			log.debug("not downloading urls");
-			//schemaOptions.remove(XmlOptions.COMPILE_DOWNLOAD_URLS);
-			// TODO implement above in Guice.
+			bindConstant().annotatedWith(Names.named("offline")).to(true);
 		}
 		if (commandLine.hasOption("o")) {
 			String filename = commandLine.getOptionValue("o");

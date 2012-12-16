@@ -86,7 +86,7 @@ public class XmlGenerator {
 			XmlGenerator xmlGenerator = injector.getInstance(XmlGenerator.class);
 			XmlGenerationOptions xmlGenerationOptions = injector.getInstance(XmlGenerationOptions.class);
 			
-			doPostModuleConfig(commandLine, xmlGenerationOptions);
+			doPostModuleConfig(commandLine, xmlGenerationOptions, injector);
 			
 			ByteArrayOutputStream stream = new ByteArrayOutputStream();
 			XmlObject generatedXml = xsdParser.generateXml(commandLine.getOptionValue("root"));
@@ -118,12 +118,16 @@ public class XmlGenerator {
 		}
 	}
 
-	private static void doPostModuleConfig(CommandLine commandLine, XmlGenerationOptions options) {
+	private static void doPostModuleConfig(CommandLine commandLine, XmlGenerationOptions options, Injector injector) {
 		if (commandLine.hasOption("s")) {
 			String[] strategies = commandLine.getOptionValues("s");
 			for (String strategy : strategies) {
 				options.getStrategies().add(Strategy.valueOf(strategy));
 			}
+		}
+		if (injector.getInstance(Key.get(Boolean.class, Names.named("offline")))) {
+			XmlOptions schemaOptions = injector.getInstance(Key.get(XmlOptions.class, Names.named("xml schema options")));
+			schemaOptions.remove(XmlOptions.COMPILE_DOWNLOAD_URLS);
 		}
 	}
 
